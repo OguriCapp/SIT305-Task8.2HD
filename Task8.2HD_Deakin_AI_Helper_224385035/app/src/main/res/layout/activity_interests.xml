@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/light_green_bg">
+
+    <!-- Top App Bar with Shadow -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="@color/light_green">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+            
+            <!-- App Title -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_title"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:gravity="center"
+                android:textColor="@android:color/white" />
+
+            <!-- Subtitle -->
+            <TextView
+                android:id="@+id/interestsWelcomeText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Choose Topics of Interest"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:alpha="0.9" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Interests Selection Form -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="@android:color/white">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Select topics of interest (choose at least 3)"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/light_green"
+                    android:gravity="center"
+                    android:layout_marginBottom="24dp" />
+
+                <!-- Interest Checkboxes -->
+                <CheckBox
+                    android:id="@+id/checkboxDegree"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Degrees and Courses"
+                    android:textSize="16sp"
+                    android:padding="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:buttonTint="@color/light_green" />
+
+                <CheckBox
+                    android:id="@+id/checkboxAccommodation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Campus Accommodation"
+                    android:textSize="16sp"
+                    android:padding="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:buttonTint="@color/light_green" />
+
+                <CheckBox
+                    android:id="@+id/checkboxTransport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Campus Transport"
+                    android:textSize="16sp"
+                    android:padding="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:buttonTint="@color/light_green" />
+
+                <CheckBox
+                    android:id="@+id/checkboxClubs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Student Clubs"
+                    android:textSize="16sp"
+                    android:padding="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:buttonTint="@color/light_green" />
+
+                <CheckBox
+                    android:id="@+id/checkboxCulture"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Campus Culture"
+                    android:textSize="16sp"
+                    android:padding="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:buttonTint="@color/light_green" />
+
+                <CheckBox
+                    android:id="@+id/checkboxCloudDeakin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cloud Deakin"
+                    android:textSize="16sp"
+                    android:padding="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:buttonTint="@color/light_green" />
+
+                <CheckBox
+                    android:id="@+id/checkboxFacilities"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Campus Facilities"
+                    android:textSize="16sp"
+                    android:padding="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:buttonTint="@color/light_green" />
+
+                <CheckBox
+                    android:id="@+id/checkboxEvents"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Campus Events"
+                    android:textSize="16sp"
+                    android:padding="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:buttonTint="@color/light_green" />
+
+                <CheckBox
+                    android:id="@+id/checkboxInternships"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Internships and Employment"
+                    android:textSize="16sp"
+                    android:padding="8dp"
+                    android:layout_marginBottom="24dp"
+                    android:buttonTint="@color/light_green" />
+            </LinearLayout>
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Continue Button -->
+    <Button
+        android:id="@+id/continueButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Continue"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/light_green" />
+
+</LinearLayout> 

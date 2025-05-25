@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Deakin University AI Helper by Hongming</string>
+    <string name="app_title">Deakin University AI Helper by Hongming</string>
+    
+    <!-- Campus Options -->
+    <string-array name="campus_options">
+        <item>Burwood (Melbourne)</item>
+        <item>Geelong Waurn Ponds</item>
+        <item>Geelong Waterfront</item>
+        <item>Warrnambool</item>
+        <item>Cloud Campus (Online)</item>
+    </string-array>
+    
+    <!-- Suggested Questions -->
+    <string name="question_honors_masters">How to apply for honors or masters at Deakin?</string>
+    <string name="question_assignments">Where can I find assignment information?</string>
+    <string name="question_campuses">How many campuses does Deakin have?</string>
+    <string name="question_transport">How is the public transport around Deakin?</string>
+    <string name="question_shops">Are there any shops near Deakin?</string>
+</resources>

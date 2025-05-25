@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/light_green_bg">
+
+    <!-- Top App Bar with Shadow -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="@color/light_green">
+        
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+            
+            <!-- Back Button -->
+            <ImageButton
+                android:id="@+id/backButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:tint="@android:color/white" />
+            
+            <!-- App Title -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_toEndOf="@id/backButton"
+                android:layout_toStartOf="@id/saveButton"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center_vertical">
+                
+                <!-- Deakin Logo -->
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/deakin_logo"
+                    android:layout_marginEnd="8dp" />
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Chat with Llama-2 AI Assistant"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:textColor="@android:color/white" />
+
+                    <!-- Subtitle -->
+                    <TextView
+                        android:id="@+id/chatSubtitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Deakin University"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        android:textColor="@android:color/white"
+                        android:alpha="0.9" />
+                </LinearLayout>
+            </LinearLayout>
+            
+            <!-- Save Button -->
+            <ImageButton
+                android:id="@+id/saveButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_menu_save"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:tint="@android:color/white" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Chat Section -->
+    <LinearLayout
+        android:id="@+id/chatSection"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <!-- Chat Messages Area -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@android:color/white">
+            
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingVertical="4dp">
+
+                <LinearLayout
+                    android:id="@+id/messagesContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+                    <!-- Messages will be added here dynamically -->
+                </LinearLayout>
+            </ScrollView>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Suggested Questions Area -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/suggestedQuestionsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@android:color/white">
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+                
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Suggested Questions"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="8dp"
+                    android:textColor="@color/light_green" />
+                
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none">
+                    
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        
+                        <!-- Question Chip 1 -->
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/questionChip1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/question_honors_masters"
+                            app:chipBackgroundColor="@color/light_green_bg"
+                            app:chipStrokeColor="@color/light_green"
+                            app:chipStrokeWidth="1dp"
+                            android:textColor="@color/light_green"
+                            android:layout_marginEnd="8dp" />
+                        
+                        <!-- Question Chip 2 -->
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/questionChip2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/question_assignments"
+                            app:chipBackgroundColor="@color/light_green_bg"
+                            app:chipStrokeColor="@color/light_green"
+                            app:chipStrokeWidth="1dp"
+                            android:textColor="@color/light_green"
+                            android:layout_marginEnd="8dp" />
+                        
+                        <!-- Question Chip 3 -->
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/questionChip3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/question_campuses"
+                            app:chipBackgroundColor="@color/light_green_bg"
+                            app:chipStrokeColor="@color/light_green"
+                            app:chipStrokeWidth="1dp"
+                            android:textColor="@color/light_green"
+                            android:layout_marginEnd="8dp" />
+                        
+                        <!-- Question Chip 4 -->
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/questionChip4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/question_transport"
+                            app:chipBackgroundColor="@color/light_green_bg"
+                            app:chipStrokeColor="@color/light_green"
+                            app:chipStrokeWidth="1dp"
+                            android:textColor="@color/light_green"
+                            android:layout_marginEnd="8dp" />
+                        
+                        <!-- Question Chip 5 -->
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/questionChip5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/question_shops"
+                            app:chipBackgroundColor="@color/light_green_bg"
+                            app:chipStrokeColor="@color/light_green"
+                            app:chipStrokeWidth="1dp"
+                            android:textColor="@color/light_green" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Progress Bar -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_gravity="center"
+            android:indeterminateTint="@color/light_green"
+            android:visibility="gone" />
+
+        <!-- Input Area -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@android:color/white">
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="4dp">
+
+                <EditText
+                    android:id="@+id/chatInputBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Ask questions about Deakin University..."
+                    android:padding="16dp"
+                    android:background="@null"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:maxLines="4" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/sendButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:src="@android:drawable/ic_menu_send"
+                    app:tint="@android:color/white"
+                    app:backgroundTint="@color/light_green"
+                    app:fabSize="mini" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+</LinearLayout> 
